@@ -1,0 +1,174 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Gradient Keyframes */
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Base */
+:root {
+    --gradient-colors: linear-gradient(135deg, #8a2be2, #00bfff, #00ffcc);
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #0f0f0f;
+    color: #f4f4f4;
+    line-height: 1.6;
+}
+
+a {
+    color: #00c2ff; /* You can update this to use gradient hover if desired */
+    text-decoration: none;
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    padding: 2rem 0;
+}
+
+/* Hero */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background: radial-gradient(circle, #1e1e1e, #0f0f0f);
+}
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+        .hero h1 span {
+            background: var(--gradient-colors);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientShift 6s ease infinite;
+        }
+
+    .hero p {
+        font-size: 1.2rem;
+        margin: 1rem 0;
+        color: #ccc;
+    }
+
+/* Scroll Button */
+.scroll-btn {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 0.5rem 1.5rem;
+    border: 2px solid transparent;
+    border-image: var(--gradient-colors);
+    border-image-slice: 1;
+    border-radius: 25px;
+    background: none;
+    color: white;
+    cursor: pointer;
+    transition: 0.4s ease;
+    background-size: 300% 300%;
+    background-position: 0% 50%;
+}
+
+    .scroll-btn:hover {
+        background: var(--gradient-colors);
+        background-size: 300% 300%;
+        animation: gradientShift 6s ease infinite;
+        color: #000;
+        border: none;
+    }
+
+/* Sections */
+section {
+    padding: 4rem 0;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    background: var(--gradient-colors);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 6s ease infinite;
+}
+
+/* Project Cards */
+.project-card {
+    background: #1b1b1b;
+    padding: 1.5rem;
+    margin-top: 1rem;
+    border-radius: 12px;
+    transition: transform 0.2s;
+}
+
+    .project-card:hover {
+        transform: translateY(-5px);
+    }
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    background: #111;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.project-card {
+    background: #1b1b1b;
+    padding: 1.5rem;
+    margin-top: 1rem;
+    border-radius: 12px;
+    transition: transform 0.2s;
+    overflow: hidden;
+    cursor: default;
+    position: relative;
+}
+
+    .project-card:hover {
+        transform: translateY(-5px);
+    }
+
+.project-title {
+    cursor: pointer;
+    user-select: none;
+    outline: none;
+}
+
+    .project-title:focus {
+        outline: 2px solid #00bfff;
+        outline-offset: 2px;
+    }
+
+.project-details {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    margin-top: 1rem;
+    color: #ccc;
+}
+
+/* When expanded */
+.project-card.expanded .project-details {
+    max-height: 800px; /* enough to fit your content */
+}
+
