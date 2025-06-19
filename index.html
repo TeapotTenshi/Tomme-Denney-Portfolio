@@ -31,56 +31,61 @@
 
 
     <section id="projects" class="container">
-        <!-- Inside the #projects section -->
-        <section id="projects" class="container">
-            <h2>Projects</h2>
+        <h2>Projects</h2>
 
-            <div class="project-card">
-                <h3 class="project-title">HaptiDraw | MIT Reality Hack 2025</h3>
-                <div class="project-summary">
-                    Developed an immersive sketching tool for the visually impaired using the Haptikos Exoskeleton. Enabled tactile feedback for digital drawing in VR.
-                </div>
-                <div class="project-details">
-                    <p>This project was developed in collaboration with Haptikos, featuring accessibility-first design in VR.</p>
-                    <img src="images/haptidraw.jpg" alt="HaptiDraw screenshot">
-                </div>
+        <div class="project-card">
+            <button class="project-title" aria-expanded="false" aria-controls="details1" id="title1">
+                HaptiDraw | MIT Reality Hack 2025
+            </button>
+            <div class="project-summary">
+                Developed an immersive sketching tool for the visually impaired using the Haptikos Exoskeleton. Enabled tactile feedback for digital drawing in VR.
             </div>
-
-            <div class="project-card">
-                <h3 class="project-title">Internship in the Afterlife | XR Final Project</h3>
-                <div class="project-summary">
-                    A VR narrative experience placing users in a surreal afterlife internship. Focused on environmental storytelling and embodied interaction.
-                </div>
-                <div class="project-details">
-                    <p>Designed for Meta Quest 3 using hand-tracking to interact with bizarre NPCs and tasks.</p>
-                    <img src="images/afterlife.jpg" alt="Internship in the Afterlife">
-                </div>
+            <div class="project-details" id="details1" role="region" aria-labelledby="title1">
+                <p>More info: This project focused on accessibility with haptic feedback devices.</p>
+                <img src="images/haptidraw.jpg" alt="Screenshot of HaptiDraw" />
             </div>
+        </div>
 
-            <div class="project-card">
-                <h3 class="project-title">I Am You | XR Final Project</h3>
-                <div class="project-summary">
-                    A perspective-shifting VR experience exploring identity and empathy through body-swapping mechanics and dialogue choices.
-                </div>
-                <div class="project-details">
-                    <p>Used Unity's XR Interaction Toolkit to create seamless first-person swaps and emotionally driven interactions.</p>
-                    <img src="images/iamyou.jpg" alt="I Am You screenshot">
-                </div>
+        <div class="project-card">
+            <button class="project-title" aria-expanded="false" aria-controls="details2" id="title2">
+                Internship in the Afterlife | XR Final Project
+            </button>
+            <div class="project-summary">
+                A VR narrative experience placing users in a surreal afterlife internship. Focused on environmental storytelling and embodied interaction.
             </div>
-
-            <div class="project-card">
-                <h3 class="project-title">Return of the Chickens VR | XR Terra Final Project</h3>
-                <div class="project-summary">
-                    A fast-paced VR game that uses hand-tracking to herd chickens across a chaotic farm environment. Designed for full Quest 2 interactivity.
-                </div>
-                <div class="project-details">
-                    <p>Inspired by slapstick comedy and fast reaction gameplay. Built with custom AI pathfinding and physics-driven flocking.</p>
-                    <img src="images/chickens.jpg" alt="Return of the Chickens VR">
-                </div>
+            <div class="project-details" id="details2" role="region" aria-labelledby="title2">
+                <p>This experience uses hand-tracking and environmental storytelling to immerse players.</p>
+                <img src="images/afterlife.jpg" alt="Internship in the Afterlife screenshot" />
             </div>
-        </section>
+        </div>
 
+        <div class="project-card">
+            <button class="project-title" aria-expanded="false" aria-controls="details3" id="title3">
+                I Am You | XR Final Project
+            </button>
+            <div class="project-summary">
+                A perspective-shifting VR experience exploring identity and empathy through body-swapping mechanics and dialogue choices.
+            </div>
+            <div class="project-details" id="details3" role="region" aria-labelledby="title3">
+                <p>Developed with Unity XR toolkit, this project explores identity through immersive gameplay.</p>
+                <img src="images/iamyou.jpg" alt="I Am You project screenshot" />
+            </div>
+        </div>
+
+        <div class="project-card">
+            <button class="project-title" aria-expanded="false" aria-controls="details4" id="title4">
+                Return of the Chickens VR | XR Terra Final Project
+            </button>
+            <div class="project-summary">
+                A fast-paced VR game that uses hand-tracking to herd chickens across a chaotic farm environment. Designed for full Quest 2 interactivity.
+            </div>
+            <div class="project-details" id="details4" role="region" aria-labelledby="title4">
+                <p>This game features AI-driven chicken flocking and physics-based hand interactions.</p>
+                <img src="images/chickens.jpg" alt="Return of the Chickens VR screenshot" />
+            </div>
+        </div>
     </section>
+
 
 
     <section id="contact" class="container">

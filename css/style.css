@@ -114,46 +114,70 @@ h2 {
 /* Project Cards */
 .project-card {
     background: #1b1b1b;
-    padding: 1.5rem;
-    margin-top: 1rem;
     border-radius: 12px;
-    transition: transform 0.2s;
-    overflow: hidden;
-    cursor: default;
-    position: relative;
+    margin-top: 1rem;
+    padding: 1rem 1.5rem 1.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: box-shadow 0.3s ease;
 }
 
     .project-card:hover {
-        transform: translateY(-5px);
+        box-shadow: 0 6px 18px rgba(0,0,0,0.3);
     }
 
+/* Use button styling for titles for accessibility */
 .project-title {
-    cursor: pointer;
-    user-select: none;
-    outline: none;
+    background: none;
+    border: none;
+    color: #00c2ff;
     font-size: 1.25rem;
-    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: left;
+    width: 100%;
+    padding: 0;
+    margin-bottom: 0.5rem;
+    user-select: none;
+    outline-offset: 3px;
 }
 
     .project-title:focus {
         outline: 2px solid #00bfff;
-        outline-offset: 2px;
+        border-radius: 4px;
     }
 
+/* Summary always visible */
 .project-summary {
-    margin-top: 0.5rem;
+    color: #ccc;
+    margin-bottom: 0.5rem;
     font-size: 1rem;
-    color: #bbb;
 }
 
+/* Hidden details initially */
 .project-details {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.5s ease, opacity 0.3s ease, padding-top 0.3s ease;
     opacity: 0;
     padding-top: 0;
-    color: #ccc;
+    transition: max-height 0.5s ease, opacity 0.4s ease, padding-top 0.4s ease;
+    color: #ddd;
 }
+
+/* When expanded */
+.project-card.expanded .project-details {
+    max-height: 800px; /* enough for content */
+    opacity: 1;
+    padding-top: 1rem;
+}
+
+/* Images inside details */
+.project-details img {
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 0.5rem;
+    display: block;
+}
+
 
 /* When expanded */
 .project-card.expanded .project-details {
