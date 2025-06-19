@@ -33,7 +33,7 @@ body {
 }
 
 a {
-    color: #00c2ff; /* You can update this to use gradient hover if desired */
+    color: #00c2ff;
     text-decoration: none;
 }
 
@@ -118,27 +118,6 @@ h2 {
     margin-top: 1rem;
     border-radius: 12px;
     transition: transform 0.2s;
-}
-
-    .project-card:hover {
-        transform: translateY(-5px);
-    }
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 2rem 0;
-    background: #111;
-    color: #666;
-    font-size: 0.9rem;
-}
-
-.project-card {
-    background: #1b1b1b;
-    padding: 1.5rem;
-    margin-top: 1rem;
-    border-radius: 12px;
-    transition: transform 0.2s;
     overflow: hidden;
     cursor: default;
     position: relative;
@@ -152,6 +131,8 @@ footer {
     cursor: pointer;
     user-select: none;
     outline: none;
+    font-size: 1.25rem;
+    color: #fff;
 }
 
     .project-title:focus {
@@ -159,16 +140,41 @@ footer {
         outline-offset: 2px;
     }
 
+.project-summary {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    color: #bbb;
+}
+
 .project-details {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.4s ease;
-    margin-top: 1rem;
+    transition: max-height 0.5s ease, opacity 0.3s ease, padding-top 0.3s ease;
+    opacity: 0;
+    padding-top: 0;
     color: #ccc;
 }
 
 /* When expanded */
 .project-card.expanded .project-details {
-    max-height: 800px; /* enough to fit your content */
+    max-height: 800px; /* enough for text + image */
+    opacity: 1;
+    padding-top: 1rem;
 }
 
+/* Image styling inside expanded content */
+.project-details img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 0.5rem;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    background: #111;
+    color: #666;
+    font-size: 0.9rem;
+}
