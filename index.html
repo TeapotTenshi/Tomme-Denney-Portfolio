@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Your Name | Portfolio</title>
+    <title>Tomme Denney | Portfolio</title>
     <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
@@ -28,7 +28,6 @@
             I’ve contributed to XR projects in academic, professional, and hackathon settings, with a strong emphasis on accessibility, interaction design, and player immersion. Certified through XR Terra and trained in ethical research practices, I’m deeply interested in how immersive media can shape human experience, storytelling, and education.
         </p>
     </section>
-
 
     <section id="projects" class="container">
         <h2>Projects</h2>
@@ -86,25 +85,31 @@
         </div>
     </section>
 
-
-
     <section id="contact" class="container">
         <h2>Contact</h2>
         <p>
             I'm always open to collaboration, freelance opportunities, or just a chat about immersive media and XR development. Feel free to reach out!
         </p>
         <p>
-            <a href="Denney.t@northeastern.edu">Denney.t@northeastern.edu</a><br />
+            <a href="mailto:Denney.t@northeastern.edu">Denney.t@northeastern.edu</a><br />
             <a href="https://www.linkedin.com/in/tommedenney/" target="_blank">LinkedIn</a><br />
             <a href="https://tommedenney.itch.io/" target="_blank">Itch.io</a>
         </p>
     </section>
 
-
     <footer>
-        <p>© 2025 Your Name</p>
+        <p>© 2025 Tomme Denney</p>
     </footer>
 
-    <script src="js/script.js"></script>
+    <!-- Inline JS instead of external file -->
+    <script>
+        document.querySelectorAll(".project-title").forEach(button => {
+            button.addEventListener("click", () => {
+                const card = button.closest(".project-card");
+                const expanded = card.classList.toggle("expanded");
+                button.setAttribute("aria-expanded", expanded);
+            });
+        });
+    </script>
 </body>
 </html>
