@@ -66,27 +66,40 @@
             }
 
         .scroll-btn {
-            display: inline-block;
-            margin-top: 2rem;
+            position: relative;
             padding: 0.6rem 1.5rem;
-            border: 2px solid transparent;
-            border-image: var(--gradient-colors);
-            border-image-slice: 1;
-            border-radius: 25px;
+            font-weight: 600;
+            border: none;
             background: none;
             color: white;
-            font-weight: 600;
+            border-radius: 25px;
             cursor: pointer;
-            transition: all 0.4s ease;
+            overflow: hidden;
+            z-index: 1;
         }
+
+            .scroll-btn::before {
+                content: "";
+                position: absolute;
+                inset: 0;
+                border-radius: 25px;
+                padding: 2px; /* thickness of the border */
+                background: var(--gradient-colors);
+                background-size: 300% 300%;
+                animation: gradientShift 6s ease infinite;
+                -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+                -webkit-mask-composite: xor;
+                mask-composite: exclude;
+                z-index: -1;
+            }
 
             .scroll-btn:hover {
                 background: var(--gradient-colors);
                 background-size: 300% 300%;
                 animation: gradientShift 6s ease infinite;
                 color: #000;
-                border: none;
             }
+
 
         /* Section container spacing */
         section {
@@ -311,7 +324,11 @@
             <div class="project-details" id="details4" role="region" aria-labelledby="title4">
                 <a href="https://tommedenney.itch.io/return-of-the-chickens-demo" target="_blank" class="scroll-btn">View on Itch.io</a>
                 <p>This fast-paced VR comedy game puts players in charge of herding rogue chickens using only their hands. Featuring flocking algorithms, gesture recognition, and real-time physics, "Return of the Chickens" delivers slapstick action and unpredictable gameplay moments. Designed for Meta Quest standalone performance with no controllers required.</p>
-                <img src="https://via.placeholder.com/400x200?text=Chickens+VR" alt="Return of the Chickens VR screenshot" />
+                <video controls>
+                    <source src="projects/returnofthechickens/0.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <img src="projects/returnofthechickens/1.png" alt="Return of the Chickens VR screenshot" />
             </div>
         </div>
 
@@ -341,7 +358,10 @@
             <div class="project-details" id="details6" role="region" aria-labelledby="title6">
                 <a href="https://tommedenney.itch.io/ar-work-of-art" target="_blank" class="scroll-btn">View on Itch.io</a>
                 <p>Accessible via mobile browser, this WebAR project allows users to view animated digital art layered over real-world surfaces using their camera. It explores the ephemeral nature of creativity and the evolving boundaries between physical and digital art mediums.</p>
-                <img src="https://via.placeholder.com/400x200?text=AR+Work+of+Art" alt="AR Work of Art" />
+                <img src="projects/arworkofart/1.png" alt="AR Work of Art" />
+                <img src="projects/arworkofart/2.png" alt="AR Work of Art" />
+                <img src="projects/arworkofart/3.png" alt="AR Work of Art" />
+                <img src="projects/arworkofart/4.png" alt="AR Work of Art" />
             </div>
         </div>
 
@@ -356,7 +376,10 @@
             <div class="project-details" id="details7" role="region" aria-labelledby="title7">
                 <a href="https://tommedenney.itch.io/tower-of-franken-frog" target="_blank" class="scroll-btn">View on Itch.io</a>
                 <p>In this eerie tower ascent game, players use a VR skee-ball mechanic to destroy cursed structures while dodging grotesque frog monsters. The experience merges nostalgic gameplay with an unsettling horror aesthetic, blending humor and fear in a surreal, interactive spectacle.</p>
-                <img src="https://via.placeholder.com/400x200?text=Tower+of+Franken+Frog" alt="Tower of Franken Frog" />
+                <img src="projects/toweroffrankenfrog/1.png" alt="Tower of Franken Frog" />
+                <img src="projects/toweroffrankenfrog/2.png" alt="Tower of Franken Frog" />
+                <img src="projects/toweroffrankenfrog/3.png" alt="Tower of Franken Frog" />
+                <img src="projects/toweroffrankenfrog/4.png" alt="Tower of Franken Frog" />
             </div>
         </div>
 
@@ -371,7 +394,12 @@
             <div class="project-details" id="details8" role="region" aria-labelledby="title8">
                 <a href="https://tommedenney.itch.io/soul-solace" target="_blank" class="scroll-btn">View on Itch.io</a>
                 <p>Players journey through haunting dreamscapes as they piece together fragments of a fractured mind. Featuring eerie sound design, shifting architecture, and immersive metaphors, this project invites reflection on themes of loss and identity in surreal VR spaces.</p>
-                <img src="https://via.placeholder.com/400x200?text=Soul+Solace" alt="Soul Solace" />
+                <img src="projects/soulsolace/1.png" alt="Soul Solace" />
+                <img src="projects/soulsolace/2.png" alt="Soul Solace" />
+                <img src="projects/soulsolace/2-5.png" alt="Soul Solace" />
+                <img src="projects/soulsolace/3.png" alt="Soul Solace" />
+                <img src="projects/soulsolace/4.png" alt="Soul Solace" />
+                <img src="projects/soulsolace/5.png" alt="Soul Solace" />
             </div>
         </div>
 
