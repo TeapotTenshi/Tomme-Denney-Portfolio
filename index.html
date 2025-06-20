@@ -107,19 +107,23 @@
             margin-bottom: 1rem;
         }
 
-        /* Project Card Styling */
         .project-card {
             background: #1b1b1b;
             border-radius: 12px;
             margin-top: 1rem;
             padding: 1rem 1.5rem 1.5rem;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            transition: box-shadow 0.3s ease;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            transform: translateY(0);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
         }
 
             .project-card:hover {
-                box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+                transform: translateY(-8px);
+                box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
             }
+
 
         .project-title {
             background: none;
@@ -154,21 +158,52 @@
             padding-top: 0;
             transition: max-height 0.5s ease, opacity 0.4s ease, padding-top 0.4s ease;
             color: #ddd;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
         }
 
+        /* Expand state */
         .project-card.expanded .project-details {
             max-height: 800px;
             opacity: 1;
             padding-top: 1rem;
         }
 
-        .project-details img {
-            max-width: 100%;
+        /* Shared styling for images and videos */
+        .project-details img,
+        .project-details video {
+            flex: 1 1 calc(33.33% - 1rem);
+            max-width: calc(33.33% - 1rem);
             height: auto;
             border-radius: 10px;
             margin-top: 0.5rem;
             display: block;
+            object-fit: contain; 
+            max-height: 300px; /* ⬅️ LIMIT HEIGHT to prevent layout breaking */
         }
+
+
+        /* Medium screens: 2 per row */
+        @media (max-width: 900px) {
+            .project-details img,
+            .project-details video {
+                flex: 1 1 calc(50% - 1rem);
+                max-width: calc(50% - 1rem);
+            }
+        }
+
+        /* Small screens: 1 per row */
+        @media (max-width: 500px) {
+            .project-details img,
+            .project-details video {
+                flex: 1 1 100%;
+                max-width: 100%;
+            }
+        }
+
+
+
 
         footer {
             text-align: center;
@@ -206,57 +241,245 @@
     <section id="projects">
         <h2>Projects</h2>
 
+        <!-- HaptiDraw -->
         <div class="project-card">
             <button class="project-title" aria-expanded="false" aria-controls="details1" id="title1">
                 HaptiDraw | MIT Reality Hack 2025
             </button>
             <div class="project-summary">
-                Developed an immersive sketching tool for the visually impaired using the Haptikos Exoskeleton. Enabled tactile feedback for digital drawing in VR.
+                An award-nominated VR sketching tool providing haptic feedback for visually impaired creators.
             </div>
             <div class="project-details" id="details1" role="region" aria-labelledby="title1">
-                <p>More info: This project focused on accessibility with haptic feedback devices.</p>
-                <img src="https://via.placeholder.com/400x200?text=HaptiDraw" alt="Screenshot of HaptiDraw" />
+                <p>This project was born out of a desire to redefine artistic expression for visually impaired individuals, utilizing the principles of cognitive extension through touch, tactile communication, and multisensory integration. During the 2025 MIT Reality Hackathon, we aimed to create a tool that not only empowers users to create but also enables them to connect with their work in a deeply immersive and accessible way. By incorporating haptic feedback and spatial mapping, we sought to bridge the gap between art and accessibility, ensuring inclusivity for all creators.</p>
+                <video controls>
+                    <source src="projects/haptidraw/0.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <img src="projects/haptidraw/1.jpg" alt="haptidraw project screenshot" />
+                <p><a href="https://devpost.com/software/haptidraw" target="_blank">View Project on Devpost</a></p>
             </div>
         </div>
 
+        <!-- InternShip In The Afterlife -->
         <div class="project-card">
             <button class="project-title" aria-expanded="false" aria-controls="details2" id="title2">
                 Internship in the Afterlife | XR Final Project
             </button>
             <div class="project-summary">
-                A VR narrative experience placing users in a surreal afterlife internship. Focused on environmental storytelling and embodied interaction.
+                A surreal VR narrative that explores bureaucracy, mortality, and spiritual limbo.
             </div>
             <div class="project-details" id="details2" role="region" aria-labelledby="title2">
-                <p>This experience uses hand-tracking and environmental storytelling to immerse players.</p>
-                <img src="https://via.placeholder.com/400x200?text=Afterlife" alt="Internship in the Afterlife screenshot" />
+                <p>Players are placed in a metaphysical 'internship' in the afterlife, where they must evaluate the fates of souls. Designed for hand-tracking and immersive interaction, the experience draws on dark humor and social commentary, immersing players in a uniquely unsettling narrative space. Created in Unity with Meta Quest support.</p>
+                <video controls>
+                    <source src="projects/internshipintheafterlife/0.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <img src="projects/internshipintheafterlife/1.png" alt="internshipintheafterlife project screenshot" />
+                <img src="projects/internshipintheafterlife/2.png" alt="internshipintheafterlife project screenshot" />
+                <img src="projects/internshipintheafterlife/3.jpg" alt="internshipintheafterlife project screenshot" />
+                <p><a href="https://tommedenney.itch.io/internship-in-the-afterlife" target="_blank">View on Itch.io</a></p>
             </div>
         </div>
 
+        <!-- I Am You -->
         <div class="project-card">
             <button class="project-title" aria-expanded="false" aria-controls="details3" id="title3">
-                I Am You | XR Final Project
+                I Am You | XR Empathy Simulation
             </button>
             <div class="project-summary">
-                A perspective-shifting VR experience exploring identity and empathy through body-swapping mechanics and dialogue choices.
+                A VR empathy simulator exploring body-swapping and emotional intelligence through first-person storytelling.
             </div>
             <div class="project-details" id="details3" role="region" aria-labelledby="title3">
-                <p>Developed with Unity XR toolkit, this project explores identity through immersive gameplay.</p>
-                <img src="https://via.placeholder.com/400x200?text=I+Am+You" alt="I Am You project screenshot" />
+                <p>"I Am You" invites players to inhabit the perspectives of different characters in emotionally charged scenarios. By swapping avatars and engaging with reactive dialogue, users experience the power of point-of-view and bias. Built with Unity XR Interaction Toolkit, this project emphasizes narrative design and social impact in immersive media.</p>
+                <img src="projects/iamyou/1.png" alt="I Am You project screenshot" />
+                <img src="projects/iamyou/2.png" alt="I Am You project screenshot" />
+                <img src="projects/iamyou/3.png" alt="I Am You project screenshot" />
+                <img src="projects/iamyou/4.png" alt="I Am You project screenshot" />
+                <p><a href="https://tommedenney.itch.io/i-am-you" target="_blank">View on Itch.io</a></p>
             </div>
         </div>
 
+        <!-- Return of the Chickens VR -->
         <div class="project-card">
             <button class="project-title" aria-expanded="false" aria-controls="details4" id="title4">
                 Return of the Chickens VR | XR Terra Final Project
             </button>
             <div class="project-summary">
-                A fast-paced VR game that uses hand-tracking to herd chickens across a chaotic farm environment. Designed for full Quest 2 interactivity.
+                A chaotic VR herding game with hand-tracking and AI-driven chicken behavior.
             </div>
             <div class="project-details" id="details4" role="region" aria-labelledby="title4">
-                <p>This game features AI-driven chicken flocking and physics-based hand interactions.</p>
+                <p>This fast-paced VR comedy game puts players in charge of herding rogue chickens using only their hands. Featuring flocking algorithms, gesture recognition, and real-time physics, "Return of the Chickens" delivers slapstick action and unpredictable gameplay moments. Designed for Meta Quest standalone performance with no controllers required.</p>
                 <img src="https://via.placeholder.com/400x200?text=Chickens+VR" alt="Return of the Chickens VR screenshot" />
+                <p><a href="https://tommedenney.itch.io/return-of-the-chickens-demo" target="_blank">View on Itch.io</a></p>
             </div>
         </div>
+
+        <!-- Interview with Eternity -->
+        <div class="project-card">
+            <button class="project-title" aria-expanded="false" aria-controls="details5" id="title5">
+                Interview With Eternity | AR Installation
+            </button>
+            <div class="project-summary">
+                A meditative augmented reality artwork exploring mortality, presence, and time.
+            </div>
+            <div class="project-details" id="details5" role="region" aria-labelledby="title5">
+                <p>Presented as an ambient AR installation, users are prompted to answer philosophical questions from an unseen interviewer. The piece overlays digital text and animated visuals on physical environments, encouraging reflection and stillness. It fuses poetry, visual design, and interaction in an artistic mixed reality context.</p>
+                <img src="https://via.placeholder.com/400x200?text=Interview+With+Eternity" alt="Interview With Eternity" />
+                <p><a href="https://tommedenney.itch.io/interview-with-eternity" target="_blank">View on Itch.io</a></p>
+            </div>
+        </div>
+
+        <!-- AR Work of Art -->
+        <div class="project-card">
+            <button class="project-title" aria-expanded="false" aria-controls="details6" id="title6">
+                AR Work of Art | Mobile WebAR Piece
+            </button>
+            <div class="project-summary">
+                A mobile-based AR experience that transforms physical space into a canvas for generative digital art.
+            </div>
+            <div class="project-details" id="details6" role="region" aria-labelledby="title6">
+                <p>Accessible via mobile browser, this WebAR project allows users to view animated digital art layered over real-world surfaces using their camera. It explores the ephemeral nature of creativity and the evolving boundaries between physical and digital art mediums.</p>
+                <img src="https://via.placeholder.com/400x200?text=AR+Work+of+Art" alt="AR Work of Art" />
+                <p><a href="https://tommedenney.itch.io/ar-work-of-art" target="_blank">View on Itch.io</a></p>
+            </div>
+        </div>
+
+        <!-- Tower of Franken Frog -->
+        <div class="project-card">
+            <button class="project-title" aria-expanded="false" aria-controls="details7" id="title7">
+                Tower of Franken Frog
+            </button>
+            <div class="project-summary">
+                A bizarre VR skee-ball horror experience combining arcade fun with spine-chilling storytelling.
+            </div>
+            <div class="project-details" id="details7" role="region" aria-labelledby="title7">
+                <p>In this eerie tower ascent game, players use a VR skee-ball mechanic to destroy cursed structures while dodging grotesque frog monsters. The experience merges nostalgic gameplay with an unsettling horror aesthetic, blending humor and fear in a surreal, interactive spectacle.</p>
+                <img src="https://via.placeholder.com/400x200?text=Tower+of+Franken+Frog" alt="Tower of Franken Frog" />
+                <p><a href="https://tommedenney.itch.io/tower-of-franken-frog" target="_blank">View on Itch.io</a></p>
+            </div>
+        </div>
+
+        <!-- Soul Solace -->
+        <div class="project-card">
+            <button class="project-title" aria-expanded="false" aria-controls="details8" id="title8">
+                Soul Solace
+            </button>
+            <div class="project-summary">
+                A psychological horror VR experience exploring grief, memory, and disconnection.
+            </div>
+            <div class="project-details" id="details8" role="region" aria-labelledby="title8">
+                <p>Players journey through haunting dreamscapes as they piece together fragments of a fractured mind. Featuring eerie sound design, shifting architecture, and immersive metaphors, this project invites reflection on themes of loss and identity in surreal VR spaces.</p>
+                <img src="https://via.placeholder.com/400x200?text=Soul+Solace" alt="Soul Solace" />
+                <p><a href="https://tommedenney.itch.io/soul-solace" target="_blank">View on Itch.io</a></p>
+            </div>
+        </div>
+
+        <!-- Gods Drunkest Driver -->
+        <div class="project-card">
+            <button class="project-title" aria-expanded="false" aria-controls="details9" id="title9">
+                Gods Drunkest Driver
+            </button>
+            <div class="project-summary">
+                A mythological racing game where divine chaos meets arcade racing.
+            </div>
+            <div class="project-details" id="details9" role="region" aria-labelledby="title9">
+                <p>Race through Olympian trials with absurd physics, divine obstacles, and unpredictable environments. This myth-inspired game challenges players to earn the title of the gods’ fastest (and possibly most reckless) driver. Designed for fast-paced, replayable fun.</p>
+                <img src="https://via.placeholder.com/400x200?text=Gods+Drunkest+Driver" alt="Gods Drunkest Driver" />
+                <p><a href="https://tommedenney.itch.io/gods-drunkest-driver" target="_blank">View on Itch.io</a></p>
+            </div>
+        </div>
+
+        <!-- Great Vending Machine -->
+        <div class="project-card">
+            <button class="project-title" aria-expanded="false" aria-controls="details10" id="title10">
+                Great Vending Machine
+            </button>
+            <div class="project-summary">
+                A surreal horror platformer inspired by urban Japanese legends.
+            </div>
+            <div class="project-details" id="details10" role="region" aria-labelledby="title10">
+                <p>Created during a study abroad in Japan, this eerie 3D platformer explores themes of disorientation and nostalgia. Players wander through dreamlike alleys, haunted vending machines, and mechanical spirits in search of escape—or meaning.</p>
+                <img src="https://via.placeholder.com/400x200?text=Great+Vending+Machine" alt="Great Vending Machine" />
+                <p><a href="https://tommedenney.itch.io/great-vending-machine" target="_blank">View on Itch.io</a></p>
+            </div>
+        </div>
+
+        <!-- Unforgotten Stories: The Partition -->
+        <div class="project-card">
+            <button class="project-title" aria-expanded="false" aria-controls="details11" id="title11">
+                Unforgotten Stories: The Partition
+            </button>
+            <div class="project-summary">
+                An immersive narrative project exploring the trauma of the India–Pakistan Partition.
+            </div>
+            <div class="project-details" id="details11" role="region" aria-labelledby="title11">
+                <p>This personal, historically grounded XR piece reflects on generational memory and the displacement of millions during the Partition. Based on oral history and family testimony, it blends interactive storytelling with archival textures and spatial audio to honor lost voices.</p>
+                <img src="https://via.placeholder.com/400x200?text=Unforgotten+Stories" alt="Unforgotten Stories: The Partition" />
+                <p><a href="https://tommedenney.itch.io/unforgotten-stories-the-partition" target="_blank">View on Itch.io</a></p>
+            </div>
+        </div>
+
+        <!-- Flora Park Mystery -->
+        <div class="project-card">
+            <button class="project-title" aria-expanded="false" aria-controls="details12" id="title12">
+                Flora Park Mystery
+            </button>
+            <div class="project-summary">
+                A narrative-driven XR puzzle experience set in a lush, mysterious botanical park.
+            </div>
+            <div class="project-details" id="details12" role="region" aria-labelledby="title12">
+                <p>Players investigate the disappearance of a park botanist by solving puzzles hidden among plants, creatures, and interactive environmental clues. Designed for AR and VR, the project combines natural exploration with mystery storytelling.</p>
+                <img src="https://via.placeholder.com/400x200?text=Flora+Park+Mystery" alt="Flora Park Mystery" />
+                <p><a href="https://tommedenney.itch.io/flora-park-mystery" target="_blank">View on Itch.io</a></p>
+            </div>
+        </div>
+
+        <!-- Walk Among Us -->
+        <div class="project-card">
+            <button class="project-title" aria-expanded="false" aria-controls="details13" id="title13">
+                Walk Among Us
+            </button>
+            <div class="project-summary">
+                An educational XR experience that blends history and presence in interactive environments.
+            </div>
+            <div class="project-details" id="details13" role="region" aria-labelledby="title13">
+                <p>*Walk Among Us* lets users explore historically significant or culturally rich environments in AR and VR. Designed as an educational tool, it allows learners to interact with virtual reconstructions, layered narratives, and annotated content to deepen understanding.</p>
+                <img src="https://via.placeholder.com/400x200?text=Walk+Among+Us" alt="Walk Among Us" />
+                <p><a href="https://tommedenney.itch.io/walkamongus" target="_blank">View on Itch.io</a></p>
+            </div>
+        </div>
+
+        <!-- The Other Realm -->
+        <div class="project-card">
+            <button class="project-title" aria-expanded="false" aria-controls="details14" id="title14">
+                The Other Realm
+            </button>
+            <div class="project-summary">
+                A branching VR visual novel that places players at the heart of supernatural decisions.
+            </div>
+            <div class="project-details" id="details14" role="region" aria-labelledby="title14">
+                <p>Set in a liminal, ghostly space, this interactive visual novel invites players to shape the story through dialogue and moral choices. The experience blends visual storytelling, character-driven plotlines, and voice-acted scenes to explore themes of justice, guilt, and redemption.</p>
+                <img src="https://via.placeholder.com/400x200?text=The+Other+Realm" alt="The Other Realm" />
+                <p><a href="https://tommedenney.itch.io/the-other-realm" target="_blank">View on Itch.io</a></p>
+            </div>
+        </div>
+
+        <!-- Curse of the Mind -->
+        <div class="project-card">
+            <button class="project-title" aria-expanded="false" aria-controls="details15" id="title15">
+                Curse of the Mind (Demo)
+            </button>
+            <div class="project-summary">
+                A VR psychological adventure that explores trauma through spatial metaphor.
+            </div>
+            <div class="project-details" id="details15" role="region" aria-labelledby="title15">
+                <p>This experimental XR demo invites users to traverse metaphorical environments representing inner fears and memories. Using light puzzles and symbolic design, *Curse of the Mind* creates an emotionally driven narrative space grounded in introspection and personal healing.</p>
+                <img src="https://via.placeholder.com/400x200?text=Curse+of+the+Mind" alt="Curse of the Mind" />
+                <p><a href="https://tommedenney.itch.io/curse-of-the-mind-demo" target="_blank">View on Itch.io</a></p>
+            </div>
+        </div>
+
+
     </section>
 
     <!-- Contact -->
