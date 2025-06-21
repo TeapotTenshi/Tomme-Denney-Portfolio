@@ -215,8 +215,37 @@
             }
         }
 
+        .contact-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+            .contact-buttons .scroll-btn {
+                flex: 1 1 150px; /* responsive but prevents squishing */
+                text-align: center;
+            }
 
 
+        .email-link {
+            color: #00c2ff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+            .email-link:hover {
+                color: #00ffff;
+                text-decoration: underline;
+            }
+
+        .twine-embed {
+            width: 100%;
+            min-height: 600px;
+            border: 2px solid #444;
+            border-radius: 10px;
+            margin-top: 1rem;
+        }
 
         footer {
             text-align: center;
@@ -508,6 +537,7 @@
             <div class="project-details" id="details14" role="region" aria-labelledby="title14">
                 <a href="https://tommedenney.itch.io/the-other-realm" target="_blank" class="scroll-btn">Download on Itch.io</a>
                 <p>Set in a liminal, ghostly space, this interactive visual novel invites players to shape the story through dialogue and moral choices. The experience blends visual storytelling, character-driven plotlines, and voice-acted scenes to explore themes of justice, guilt, and redemption.</p>
+                <iframe src="projects/otherrealm/otherrealm.html" class="twine-embed" title="Play Other Realm" loading="lazy" frameborder="0" allowfullscreen> </iframe>
                 <img src="projects/otherrealm/1.png" alt="The Other Realm" />
             </div>
         </div>
@@ -537,10 +567,14 @@
             I'm always open to collaboration, freelance opportunities, or just a chat about immersive media and XR development.
         </p>
         <p>
-            <a href="mailto:Denney.t@northeastern.edu">Denney.t@northeastern.edu</a><br />
-            <a href="https://www.linkedin.com/in/tommedenney/" target="_blank" class="scroll-btn">LinkedIn</a><br />
-            <a href="https://tommedenney.itch.io/" target="_blank" class="scroll-btn">Itch.io</a>
+            <a href="mailto:Denney.t@northeastern.edu" class="email-link">Denney.t@northeastern.edu</a>
         </p>
+
+        <div class="contact-buttons">
+            <a href="https://www.linkedin.com/in/tommedenney/" target="_blank" class="scroll-btn">Follow me on LinkedIn!</a>
+            <a href="https://tommedenney.itch.io/" target="_blank" class="scroll-btn">Check out my Itch.io!</a>
+        </div>
+
     </section>
 
     <!-- Footer -->
@@ -561,119 +595,3 @@
 
 </body>
 </html>
-
-
-<!--<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tomme Denney | Portfolio</title>
-    <link rel="stylesheet" href="css/style.css" />
-</head>
-<body>
-
-    <header class="hero">
-        <div class="container">
-            <h1>Hello, I'm <span>Tomme Denney</span></h1>
-            <p>Creative Designer & Developer</p>
-            <a href="#projects" class="scroll-btn">View Projects ↓</a>
-        </div>
-    </header>
-
-    <section id="about" class="container">
-        <h2>About Me</h2>
-        <p>
-            I’m an XR developer with a background in Game Design and a passion for crafting immersive, meaningful experiences across virtual and mixed reality. I'm currently pursuing a Master of Science in Extended Reality (XR) with a concentration in A.I. at Northeastern University, where I'm focused on blending spatial computing with emerging technologies.
-        </p>
-        <p>
-            My work spans across VR, AR, and MR — from controller-free hand interaction on Meta Quest 3 to AI-driven locomotion research in VR environments. Whether prototyping narrative-driven experiences or optimizing performance for low-spec hardware, I approach every challenge with a balance of creativity and technical precision.
-        </p>
-        <p>
-            I’ve contributed to XR projects in academic, professional, and hackathon settings, with a strong emphasis on accessibility, interaction design, and player immersion. Certified through XR Terra and trained in ethical research practices, I’m deeply interested in how immersive media can shape human experience, storytelling, and education.
-        </p>
-    </section>
-
-    <section id="projects" class="container">
-        <h2>Projects</h2>
-
-        <div class="project-card">
-            <button class="project-title" aria-expanded="false" aria-controls="details1" id="title1">
-                HaptiDraw | MIT Reality Hack 2025
-            </button>
-            <div class="project-summary">
-                Developed an immersive sketching tool for the visually impaired using the Haptikos Exoskeleton. Enabled tactile feedback for digital drawing in VR.
-            </div>
-            <div class="project-details" id="details1" role="region" aria-labelledby="title1">
-                <p>More info: This project focused on accessibility with haptic feedback devices.</p>
-                <img src="images/haptidraw.jpg" alt="Screenshot of HaptiDraw" />
-            </div>
-        </div>
-
-        <div class="project-card">
-            <button class="project-title" aria-expanded="false" aria-controls="details2" id="title2">
-                Internship in the Afterlife | XR Final Project
-            </button>
-            <div class="project-summary">
-                A VR narrative experience placing users in a surreal afterlife internship. Focused on environmental storytelling and embodied interaction.
-            </div>
-            <div class="project-details" id="details2" role="region" aria-labelledby="title2">
-                <p>This experience uses hand-tracking and environmental storytelling to immerse players.</p>
-                <img src="images/afterlife.jpg" alt="Internship in the Afterlife screenshot" />
-            </div>
-        </div>
-
-        <div class="project-card">
-            <button class="project-title" aria-expanded="false" aria-controls="details3" id="title3">
-                I Am You | XR Final Project
-            </button>
-            <div class="project-summary">
-                A perspective-shifting VR experience exploring identity and empathy through body-swapping mechanics and dialogue choices.
-            </div>
-            <div class="project-details" id="details3" role="region" aria-labelledby="title3">
-                <p>Developed with Unity XR toolkit, this project explores identity through immersive gameplay.</p>
-                <img src="images/iamyou.jpg" alt="I Am You project screenshot" />
-            </div>
-        </div>
-
-        <div class="project-card">
-            <button class="project-title" aria-expanded="false" aria-controls="details4" id="title4">
-                Return of the Chickens VR | XR Terra Final Project
-            </button>
-            <div class="project-summary">
-                A fast-paced VR game that uses hand-tracking to herd chickens across a chaotic farm environment. Designed for full Quest 2 interactivity.
-            </div>
-            <div class="project-details" id="details4" role="region" aria-labelledby="title4">
-                <p>This game features AI-driven chicken flocking and physics-based hand interactions.</p>
-                <img src="images/chickens.jpg" alt="Return of the Chickens VR screenshot" />
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="container">
-        <h2>Contact</h2>
-        <p>
-            I'm always open to collaboration, freelance opportunities, or just a chat about immersive media and XR development. Feel free to reach out!
-        </p>
-        <p>
-            <a href="mailto:Denney.t@northeastern.edu">Denney.t@northeastern.edu</a><br />
-            <a href="https://www.linkedin.com/in/tommedenney/" target="_blank">LinkedIn</a><br />
-            <a href="https://tommedenney.itch.io/" target="_blank">Itch.io</a>
-        </p>
-    </section>
-
-    <footer>
-        <p>© 2025 Tomme Denney</p>
-    </footer>-->
-<!-- Inline JS instead of external file -->
-<!--<script>
-        document.querySelectorAll(".project-title").forEach(button => {
-            button.addEventListener("click", () => {
-                const card = button.closest(".project-card");
-                const expanded = card.classList.toggle("expanded");
-                button.setAttribute("aria-expanded", expanded);
-            });
-        });
-    </script>
-</body>
-</html>-->
